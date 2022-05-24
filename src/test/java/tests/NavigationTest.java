@@ -67,20 +67,6 @@ public class NavigationTest extends BaseMobileTest {
 		specificList.chooseNewMovie("The Batman","The Batman");
 		Assert.assertTrue(specificList.addedmovieavailable(), "Added Option not displayed");
 	}
-	@Test
-	public void deleteMovieJustAdded(){
-		log.info("load list page");
-		HomePage home = loadHomePage();
-		LoginPage login = home.goToLoginScreen();
-		Assert.assertTrue(login.loginFormDisplayed(),"Form is not displayed");
 
-		ProfilePage profile = login.as(VALID_USER);
-		MyListsPage lists = profile.goTo(LISTAS);
-		NewListPage newList = lists.goToCreateList();
-		SpecificListPage specificList = newList.createNewList();
-		specificList.chooseNewMovie("The Batman","The Batman");
-		specificList.deleteMovie();
-
-	}
 
 }
